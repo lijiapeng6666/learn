@@ -4,7 +4,9 @@
       "Bash(git config:*)",
       "Bash(ssh-add:*)",
       "Bash(git remote set-url:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "WebFetch(domain:mp.weixin.qq.com)",
+      "WebFetch(domain:docs.cursor.sh)"
     ],
     "deny": [],
     "ask": []
