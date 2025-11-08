@@ -24,22 +24,18 @@
 // 解释：所有元素相同，最长递增子序列只能是单个元素
 // ```
 
-function longestIncreasingSubsequence(nums) {
-  if (nums.length === 0) return 0;
+[0, 1, 0, 3, 2, 3]
+[1, 2, 1, 1, 1, 1]
 
-  // dp[i] 表示以 nums[i] 结尾的最长递增子序列长度
-  const dp = new Array(nums.length).fill(1);
 
-  for (let i = 1; i < nums.length; i++) {
-    for (let j = 0; j < i; j++) {
-      if (nums[j] < nums[i]) {
-        // 如果找到比 nums[i] 小的前面的数
-        // 就可以接在那个序列后面
-        dp[i] = Math.max(dp[i], dp[j] + 1);
-      }
+function zuichang(nums) {
+    let array = Array(nums.length).fill(1);
+    for (let i = 1; i < nums.length; i++) {
+        for (let j = 0; j < i; j++) {
+            if (nums[j] < nums[i]) {
+                array[i] = Math.max(array[i], (array[j] + 1));
+            }
+        }
     }
-  }
-
-  // 返回所有 dp 中的最大值
-  return Math.max(...dp);
+    return Math.max(...array);
 }
