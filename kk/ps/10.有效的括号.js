@@ -36,20 +36,28 @@
 // 解释：嵌套括号正确匹配
 // ```
 
+// **关键问题：**
+// - 空字符串是否有效？（是）
+// - 字符串是否只包含括号？（是）
+// - 括号是否可以嵌套？（可以）
+// - 是否需要考虑其他字符？（不需要）
+
+// ---
+
 function kuohao(s) {
-    const stack = [];
+    const stackArr = [];
     for (let i = 0; i < s.length; i++) {
-        if (s[i] === '(') {
-            stack.push(')');
-        } else if(s[i] === '{') {
-            stack.push('}');
+        if (s[i] === '{') {
+            stackArr.push('}');
+        } else if (s[i] === '(') {
+            stackArr.push(')')
         } else if (s[i] === '[') {
-            stack.push(']');
+            stackArr.push(']')
         } else {
-            if (!stack.length || stack.pop() !== s[i]) {
+            if (!stackArr.length || stackArr.pop() !== s[i]) {
                 return false;
             }
         }
     }
-    return !stack.length
+    return stackArr.length === 0;
 }

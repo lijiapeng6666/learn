@@ -10,14 +10,14 @@
 
 // ---
 
-function findSubarraysByBruteForce(nums, target) {
-    const result = [];
-    for (let i = 0; i < nums.length; i++) {
+function sumTowArray(arr, target) {
+    const result = []
+    for (let i = 0; i < arr.length; i++) {
         let sum = 0;
-        for (let j = i; j < nums.length; j++) {
-            sum = sum + nums[j];
+        for (let j = i; j < arr.length; j++) {
+            sum = sum + arr[j]
             if (sum === target) {
-                result.push(nums.slice(i, j + 1));
+                result.push(arr.slice(i, j + 1));
             }
         }
     }

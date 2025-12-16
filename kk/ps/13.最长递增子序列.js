@@ -24,18 +24,14 @@
 // 解释：所有元素相同，最长递增子序列只能是单个元素
 // ```
 
-[0, 1, 0, 3, 2, 3]
-[1, 2, 1, 1, 1, 1]
-
-
 function zuichang(nums) {
-    let array = Array(nums.length).fill(1);
+    const arr = new Array(nums.length).fill(1);
     for (let i = 1; i < nums.length; i++) {
         for (let j = 0; j < i; j++) {
-            if (nums[j] < nums[i]) {
-                array[i] = Math.max(array[i], (array[j] + 1));
+            if (nums[i] > nums[j]) {
+                arr[i] = Math.max(arr[i], arr[j] + 1);
             }
         }
     }
-    return Math.max(...array);
+    return Math.max(...arr);
 }
