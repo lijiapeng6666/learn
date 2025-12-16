@@ -106,7 +106,7 @@ Stage 4: 生成 (Generation)
   ├─ 生成source map（用于调试）
   └─ 输出：可执行的JS代码
 
-      ↓
+      ↓ 
 
 Stage 5: 写入 (Emit)
   ├─ 将产物写入到output目录
